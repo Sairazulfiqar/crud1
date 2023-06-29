@@ -44,9 +44,9 @@ app.post('agregar', (req,res) => {
 //Mostrar formulario para editar un usuario
 app.get('/editar/id', (req,res) => {
     const id = req.params.id;
-    cruddb.query('SELECT FROM usuarios WHERE id = ?',id (error, result) => {
+    cruddb.query('SELECT FROM usuarios WHERE id = ?',id, (error, result) => {
         if (error) throw error; 
-        res.render('editar', {usuario: result [0]}),
+        res.render('editar', {usuario: result [0]});
     });
 });
 
