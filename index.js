@@ -1,4 +1,6 @@
+const express = require('express');
 const port = 3000;
+const app = express();
 const cruddb = require ('./cruddb');
 
 app.use(express.static('public'))
@@ -59,4 +61,8 @@ app.post('/editar/:id', (req,res) => {
         if (error) throw error;
         res.redirect('/');
     });
+});
+
+app.listen(port, ()=> {
+    console.log(`App running on http://localhost${port}`);
 });
