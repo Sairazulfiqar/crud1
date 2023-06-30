@@ -36,9 +36,9 @@ app.get('/agregar', (req,res) => {
 
 //Agregar un usuario a la base de datos
 app.post('agregar', (req,res) => {
-    const {nombre, email} = req.body;
+    const {nombre, correo} = req.body;
     sql = 'INSERT INTO usuarios SET?';
-    cruddb.query(sql, {nombre,email}, (error, result) => {
+    cruddb.query(sql, {nombre,correo}, (error, result) => {
         if (error) throw error;
         res.redirect('/');
     });
@@ -57,8 +57,8 @@ app.get('/editar/id', (req,res) => {
 app.post('/editar/:id', (req,res) => {
     const id= req.params.id;
     const {nombre,email} = req.body;
-    cruddb.query('UPDATE usuarios SET nombre = ?, email = ? WHERE id = ?',
-    [nombre, email, id], (error, result) => {
+    cruddb.query('UPDATE usuarios SET nombre = ?, correo = ? WHERE id = ?',
+    [nombre, correo, id], (error, result) => {
         if (error) throw error;
         res.redirect('/');
     });
