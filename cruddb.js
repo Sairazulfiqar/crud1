@@ -1,5 +1,5 @@
 const mysql = require('mysql');
-connection = mysql.createConnection({
+const connection = mysql.createConnection({
     host:'localhost',
     user: 'root',
     password: 'root',
@@ -13,3 +13,5 @@ connection.connect((error) => {
     }
     console.log('Conectado a la CRUDDB')
 });
+
+module.exports = connection;
