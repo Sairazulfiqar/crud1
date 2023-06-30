@@ -20,15 +20,9 @@
         </tr>
         <% usuarios.forEach(usuario=> { %>
             <tr>
-                <td>
-                    <%= usuario.id %>
-                </td>
-                <td>
-                    <%= usuario.nombre %>
-                </td>
-                <td>
-                    <%= usuario.email %>
-                </td>
+                <td><%= usuario.id %></td>
+                <td><%= usuario.nombre %></td>
+                <td><%= usuario.correo %></td>
                 <td>
                     <a href="/editar/<%= usuario.id %>">Editar</a>
                     <a href="/eliminar/<%= usuario.id %>">Eliminar</a>
